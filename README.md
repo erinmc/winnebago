@@ -1,8 +1,7 @@
 # Winnebago
 ### Downloading & Installing the tool
 1. git clone the tool ( you can use the http://mac.github.com client ).
-2. Copy the example configuration file https://github.com/dev318/winnebago/downloads
-3. Rename the configuration file to .winnebago.conf in the main xcode project directory
+2. Rename the configuration file EXAMPLE.winnebago.conf to .winnebago.conf in the main xcode project directory
 4. Edit the dialog text in to com.github.winnebago.settings.plist & .winnebago.conf & html file.
 5. sudo ./pkg_build.sh in the main directory
 
