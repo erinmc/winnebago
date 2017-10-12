@@ -7,7 +7,7 @@
 
 
 ## A user migration suite
-Winnebago is a tool that I (dev318) have been working ( and have rewritten ) for a couple of years.
+Winnebago is a tool that Github user dev318 had been working on ( and have rewritten ) for a couple of years.
 It basically a cocoa wrapper for a series of scripts that need to run in a specific order.
 The initial installation of the Winnebago is done through the [Winnebago (install)] policy. This policy runs the latest version of the winnebago.pkg package. This installer creates the application and launchd item that invokes the application. The postinstall script loads the launchd item, triggered at a later date using the [Winnebago (trigger)] policy.
 
