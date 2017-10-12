@@ -159,3 +159,9 @@ More to come later, will post links to MacSysAdmin preso
 4. Allow custom images to be passed from shell functions.
 5. Change uibridge to NSConnections
 6. Convert BASH binding script to python, ruby...
+
+### erinmc changes
+1. Support for macOS versions 10.13 and earlier
+2. Changed location for jamf binary
+3. Commented out renaming the device in dsconfig.sh due to organizational specific naming conventions did not adhear to the current script version. 
+4. Changed GUI text to remove refrences to another company. 
