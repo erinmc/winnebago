@@ -1,5 +1,7 @@
 #!/bin/bash
 # dsconfig
+# 10/12/2017 - Erin McDonald - commented out computer naming due to org specific
+# naming convention
 #################################################################################
 set -v # Uncomment for debug , also change LOGLEVEL=VERBOSE
 declare -xa EN=( 0 1 2 ) # Interfaces to test en0 , en1
