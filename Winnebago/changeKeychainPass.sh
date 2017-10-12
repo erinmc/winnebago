@@ -13,6 +13,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib:/usr/local/include:/u
 ###############################################################################################
 #		HISTORY:
 #						- created by Zack Smith (zsmith@318.com) 	09/28/2010
+#                       - updated by Erin McDonald for change from .keychain to .keychain-db
 ###############################################################################################
 
 declare -x Script="${0##*/}" ; ScriptName="${Script%%\.*}"
@@ -55,7 +56,7 @@ setInstallPercentage 10.00
 declare -x mv="/bin/mv"
 declare -x chown="/usr/sbin/chown"
 declare -x security="/usr/bin/security"
-declare -x LoginKeychain="/Users/$Username/Library/Keychains/login.keychain"
+declare -x LoginKeychain="/Users/$Username/Library/Keychains/login.keychain-db"
 
 if [ ! -e "$LoginKeychain" ]; then
 	StatusMSG $FUNCNAME "Keychain $LoginKeychain does not exist - Skipping"
@@ -74,7 +75,7 @@ else
 			StatusMSG $ScriptName "Keychain updated successfully"
 		else
 			StatusMSG $ScriptName "Updating users keychain failed, creating new keychain"
-			$mv "${LoginKeychain:?}" "/Library/Caches/$Username.login.keychain.backup"
+			$mv "${LoginKeychain:?}" "/Library/Caches/$Username.login.keychain-db.backup"
 			$security create-keychain -p "$NewPass" "$LoginKeychain" &&
 				StatusMSG $ScriptName "Created new keychain: $LoginKeychain"
 			$security default-keychain -s "$LoginKeychain" &&

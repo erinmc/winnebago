@@ -203,7 +203,7 @@ checkSystemVersion() {
         declare -x SYSTEM_VERSION="/System/Library/CoreServices/SystemVersion.plist"
         declare -x OSVER="$("$defaults" read "${SYSTEM_VERSION%.plist}" ProductVersion )"
         case "${OSVER:?}" in
-                10.0* | 10.1* | 10.2* | 10.3* | 10.4*) \
+                10.0* | 10.1.* | 10.2* | 10.3* | 10.4*) \
                         FatalError $FUNCNAME "OS version: $OSVER is too old." ;;
                 10.5*) \
                         StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
@@ -216,6 +216,24 @@ checkSystemVersion() {
                 10.7*) \
                         StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
                         export OsVersion="7"; return 0 ;;
+                10.8*) \
+                        StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
+                        export OsVersion="8"; return 0 ;;
+                10.9*) \
+                        StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
+                        export OsVersion="9"; return 0 ;;
+                10.10*) \
+                        StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
+                        export OsVersion="10"; return 0 ;;
+                10.11*) \
+                        StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
+                        export OsVersion="11"; return 0 ;;
+                10.12*) \
+                        StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
+                        export OsVersion="12"; return 0 ;;
+                10.13*) \
+                        StatusMSG $FUNCNAME "CHECK_OS: OS check: $OS successful!";
+                        export OsVersion="12"; return 0 ;;
                 *) \
                         FatalError $FUNCNAME "Unsupported OS:$OS unknown error";;
 	esac

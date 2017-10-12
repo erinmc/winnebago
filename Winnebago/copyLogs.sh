@@ -8,6 +8,7 @@
 ###############################################################################################
 #		HISTORY:
 #						- created by Zack Smith (zsmith@318.com) 	09/28/2010
+#                       - modified by Erin McDonald to comment out copying logs to share
 ###############################################################################################
 
 
@@ -22,7 +23,7 @@ showUsage(){
 	printf "%s\n\t" "USAGE:"
 	printf "%s\n\t" 
 #	printf "%s\n\t" " OUTPUT:"
-#	printf "%s\n\t" " -v | # Turn on verbose output"
+	printf "%s\n\t" " -v | # Turn on verbose output"
 #	printf "\033[%s;%s;%sm%s\033[0m\n\t" "1" "44" "37" " -C | # Turn on colorized output"
 #	printf "\033[0m"
 	printf "%s\n\t" " OTHER TASKS:"
@@ -86,20 +87,20 @@ if [ -d "$LocalMount" ] ; then
 	[ -d "$LocalMount" ] && 
 		$mv "$LocalMount" "$LocalMount_$$$RANDOM"
 fi
-StatusMSG $ScriptName "Connecting to $ShareServer"
+#StatusMSG $ScriptName "Connecting to $ShareServer"
 # Create the local directory if it does not exist
-if [ ! -d "$LocalMount" ] ; then
-	$mkdir "$LocalMount" ||
-		echo "Unable to make directory..."
-else
-	echo "Notice: The share is already mounted"
-fi
-if $ping -c 1 $ShareServer ; then
-	$mount_afp -o nobrowse "afp://$ShareUser:$SharePass@$ShareServer/$SharePoint" "$LocalMount" ||
-		StatusMSG $ScriptName "Mounting the smb share may have failed"
-else
-	StatusMSG $ScriptName "$ShareServer is not accessible"
-fi
+#if [ ! -d "$LocalMount" ] ; then
+#	$mkdir "$LocalMount" ||
+#		echo "Unable to make directory..."
+#else
+#	echo "Notice: The share is already mounted"
+#fi
+#if $ping -c 1 $ShareServer ; then
+#	$mount_smbfs -o nobrowse "//$ShareUser:$SharePass@$ShareServer/$SharePoint" "$LocalMount" ||
+#		StatusMSG $ScriptName "Mounting the smb share may have failed"
+#else
+#	StatusMSG $ScriptName "$ShareServer is not accessible"
+#fi
 setInstallPercentage 50.00
 
 if [ -d "$LocalMount" ] ; then

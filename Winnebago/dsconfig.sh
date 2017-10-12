@@ -310,6 +310,10 @@ export OS="N"; return 0 ;;
 statusMessage passed "CHECK_OS: OS check: $OSVER successful!";
 export OS="N"; return 0 ;;
 
+10.13*) \
+statusMessage passed "CHECK_OS: OS check: $OSVER successful!";
+export OS="N"; return 0 ;;
+
 *) \
 die ERROR "CHECK_OS:$LINENO Unsupported OS:$OSVER unknown error" 192 ;;
 esac
